@@ -9,4 +9,20 @@ class Marca extends Model
 {
     use HasFactory;
     protected $fillable = ['nome','imagem'];
+
+    public function rules(){
+        return [
+                             // unique recebe a tabela e a coluna e ignora o id que vem da atualização
+            'nome' => 'required|unique:marcas,nome,'.$this->id.'|min:3',
+            'imagem' => 'required',
+        ];
+    }
+
+    public function feedback(){
+        return [
+            'required' => 'O campo :attribute é obrigatório!',
+            'nome.unique' => 'O nome da marca já existe!',
+            'nome.min' => 'O nome dele ter no mínimo 3 caracteres.',
+        ];
+    }
 }
