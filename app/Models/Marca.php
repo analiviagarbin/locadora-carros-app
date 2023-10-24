@@ -14,7 +14,7 @@ class Marca extends Model
         return [
                              // unique recebe a tabela e a coluna e ignora o id que vem da atualização
             'nome' => 'required|unique:marcas,nome,'.$this->id.'|min:3',
-            'imagem' => 'required',
+            'imagem' => 'required|file|mimes:png',
         ];
     }
 
@@ -23,6 +23,7 @@ class Marca extends Model
             'required' => 'O campo :attribute é obrigatório!',
             'nome.unique' => 'O nome da marca já existe!',
             'nome.min' => 'O nome dele ter no mínimo 3 caracteres.',
+            'imagem.mimes' => 'O arquivo deve ter a extensão .png',
         ];
     }
 }

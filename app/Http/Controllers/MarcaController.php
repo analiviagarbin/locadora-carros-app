@@ -45,7 +45,14 @@ class MarcaController extends Controller
         $request->validate($this->marca->rules(), $this->marca->feedback());
         //stateless | habilitar header Accept application/json
 
-        $marca = $this->marca->create($request->all());
+        $imagem = $request->file('imagem');
+        $imagem_urn = $imagem->store('imagens', 'public');
+
+        $marca = $this->marca->create([
+            'nome' => $request->nome,
+            'imagem' => $imagem_urn // salva no banco o lugar que está salva a imagem
+        ]);
+
         return response()->json($marca, 201);
     }
 
