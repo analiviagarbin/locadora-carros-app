@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Marca;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MarcaController extends Controller
 {
@@ -115,7 +116,19 @@ class MarcaController extends Controller
             $request->validate($this->marca->rules(), $this->marca->feedback());
         }
 
-        $marca->update($request->all());
+        // remove um arquivo caso um novo seja enviado
+        if($request->file('imagem')){
+            Storage::disk('public')->delete($marca->imagem);
+        }
+
+        $imagem = $request->file('imagem');
+        $imagem_urn = $imagem->store('imagens', 'public');
+
+        $marca->update([
+            'nome' => $request->nome,
+            'imagem' => $imagem_urn // salva no banco o lugar que está salva a imagem
+        ]);
+
         return response()->json($marca, 200);
     }
 
@@ -132,6 +145,9 @@ class MarcaController extends Controller
         if($marca == null) {
             return response()->json(["erro"=> "Não foi possível deletar objeto, recurso indísponível"],404);
         }
+
+        # remove a imagem
+        Storage::disk('public')->delete($marca->imagem);
 
         $nome = $marca->getAttribute('nome');
         $marca->delete();
