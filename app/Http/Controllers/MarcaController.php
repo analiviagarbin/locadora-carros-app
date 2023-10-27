@@ -47,7 +47,7 @@ class MarcaController extends Controller
         //stateless | habilitar header Accept application/json
 
         $imagem = $request->file('imagem');
-        $imagem_urn = $imagem->store('imagens', 'public');
+        $imagem_urn = $imagem->store('imagens/marcas', 'public');
 
         $marca = $this->marca->create([
             'nome' => $request->nome,
