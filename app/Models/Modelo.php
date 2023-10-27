@@ -23,4 +23,9 @@ class Modelo extends Model
             'abs'=> 'required|boolean',
         ];
     }
+
+    public function marcas() {
+        // um modelo pertence a uma marca
+        return $this->belongsTo('App\Moldels\Marca');
+    }
 }
