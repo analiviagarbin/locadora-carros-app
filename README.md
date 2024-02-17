@@ -19,7 +19,7 @@ Este projeto foi inspirado no curso "Desenvolvimento Web Avançado com PHP, Lara
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seunomeusuario/locadora-carros-app.git
+   git clone https://github.com/analiviagarbin/locadora-carros-app.git
    ```
 
 2. Navegue até o diretório do projeto:
