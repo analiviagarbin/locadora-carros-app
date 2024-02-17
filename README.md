@@ -1,4 +1,3 @@
-```
 ### Sistema de Aluguel de Carros
 
 Este é um aplicativo web para um sistema de aluguel de carros, construído para fins educacionais para estudo de desenvolvimento web full-stack.
