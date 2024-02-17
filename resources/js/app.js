@@ -10,7 +10,7 @@ window.Vue = require('vue').default;
 
 import Vue from 'vue';
 /* importando e configurando o vuex*/
-import Vuex from 'Vuex'
+import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
