@@ -1,77 +1,76 @@
-### Sistema de Aluguel de Carros
+### Car Rental System
 
-Este é um aplicativo web para um sistema de aluguel de carros, construído para fins educacionais para estudo de desenvolvimento web full-stack.
-Este projeto foi inspirado no curso "Desenvolvimento Web Avançado com PHP, Laravel e Vue.JS" da Udemy, ministrado por Jorge Sant Ana.
+This is a web application for a car rental system, built for educational purposes for studying full-stack web development.
+This project was inspired by the "Advanced Web Development with PHP, Laravel, and Vue.js" course on Udemy, taught by Jorge Sant Ana.
 
-#### Tecnologias Utilizadas
-
+#### Technologies Used
 - **Backend**: Laravel
 - **Frontend**: Vue.js
-- **Banco de Dados**: MySQL
+- **Database**: MySQL
 
-#### Funcionalidades
+#### Features
 
-- Autenticação e autorização de usuários
-- Operações CRUD para gerenciar carros, clientes, locações, marcas e modelos.
+- User authentication and authorization
+- CRUD operations to manage cars, clients, rentals, brands, and models.
 
-#### Instalação
+#### Installation
 
-1. Clone o repositório:
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/analiviagarbin/locadora-carros-app.git
    ```
 
-2. Navegue até o diretório do projeto:
+2. Navigate to the project directory:
 
    ```bash
    cd locadora-carros-app
    ```
 
-3. Instale as dependências do backend:
+3. Install backend dependencies:
 
    ```bash
    composer install
    ```
 
-4. Instale as dependências do frontend:
+4. Install frontend dependencies:
 
    ```bash
    npm install
    ```
 
-5. Configure as variáveis de ambiente:
+5. Configure environment variables:
 
-   - Copie o arquivo `.env.example` para `.env`:
+    - Copy the `.env.example` file to `.env`:
 
      ```bash
      cp .env.example .env
      ```
 
-   - Atualize o banco de dados e outras variáveis de configuração no arquivo `.env`.
+   - Update the database and other configuration variables in the `.env` file.
 
-6. Gere a chave da aplicação:
+7. Generate the application key:
 
    ```bash
    php artisan key:generate
    ```
 
-7. Execute as migrações do banco de dados:
+8. Run the database migrations:
 
    ```bash
    php artisan migrate
    ```
 
-8. Compile os recursos do frontend:
+9. Compile frontend assets:
 
    ```bash
    npm run dev
    ```
 
-9. Inicie o servidor da aplicação:
+10. Start the application server:
 
     ```bash
     php artisan serve
     ```
 
-10. Acesse a aplicação em seu navegador em `http://localhost:8000`.
+11. Access the application in your browser at `http://localhost:8000`.
